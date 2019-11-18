@@ -134,20 +134,43 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
-function addList(...args) {
-  var sum = 0;
-  for (var i = 0; i < arguments.length; i++) {
-    sum += arguments[i];
-  }
-  return sum;
-}
 
 function addList(...args) {
+  var sum = 0
   if (args.length === 0) {
     return 0
+  } else {
+    args.forEach(function (num) {
+      sum += num
+    })
+    return sum
   }
-  return args.reduce((acc, sum) => acc + sum)
 }
+
+
+
+
+
+
+
+
+
+
+
+// function addList(...args) {
+//   var sum = 0;
+//   for (var i = 0; i < arguments.length; i++) {
+//     sum += arguments[i];
+//   }
+//   return sum;
+// }
+
+// function addList(...args) {
+//   if (args.length === 0) {
+//     return 0
+//   }
+//   return args.reduce((acc, sum) => acc + sum)
+// }
 
 // function addList(arr) {          INCORRECT
 //   var sum = 0;
@@ -179,14 +202,14 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
-function computeRemainder(x, y) {
-  if (y === 0) {
-    return Infinity
-  }
-  else {
-    return x % y;
-  }
-}
+// function computeRemainder(x, y) {
+//   if (y === 0) {
+//     return Infinity
+//   }
+//   else {
+//     return x % y;
+//   }
+// }
 
 // function computeRemainder(x,y){ 
 //   if (y > 0) {
@@ -259,19 +282,19 @@ range(5,2) //=> "First argument must be less than second"
 // }
 
 
-function range(num1, num2) {
-  let arry = [];
-  if (num1 > num2) {
-    return 'First argument must be less than second';
-  }
-  // while(num1 <= num2){
-  //   num1 -= num2
-  // }
-  for (let i = num1; i < num2; i++) {
-    arry.push(i);
-  }
-  return arry;
-}
+// function range(num1, num2) {
+//   let arry = [];
+//   if (num1 > num2) {
+//     return 'First argument must be less than second';
+//   }
+//   // while(num1 <= num2){
+//   //   num1 -= num2
+//   // }
+//   for (let i = num1; i < num2; i++) {
+//     arry.push(i);
+//   }
+//   return arry;
+// }
 
 // while(num1 < num2) {     while loop that works
 //   arry.push num1
@@ -291,32 +314,32 @@ Prompt:
 
 Examples:
 
-reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES" 
+reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
 
-function reverseUpcaseString(str) {
-  //.split(), arr, reverse(), join(), uppercase()
-  //   let arr = str.split(" ");
-  // let arr = []; does not work
-  // arr.split(str); does not work
-  // arr.reverse();
-  // arr.join('');
-  // arr.toUpperCase();  
-  // return arr;
+// function reverseUpcaseString(str) {
+//   //.split(), arr, reverse(), join(), uppercase()
+//   //   let arr = str.split(" ");
+//   // let arr = []; does not work
+//   // arr.split(str); does not work
+//   // arr.reverse();
+//   // arr.join('');
+//   // arr.toUpperCase();  
+//   // return arr;
 
 
-  return str.split(' ').reverse().join('').toUpperCase(); //does not work
-
-
-
-
-  // "SEI rocks"
+//   return str.split(' ').reverse().join('').toUpperCase(); //does not work
 
 
 
-}
+
+//   // "SEI rocks"
+
+
+
+// }
 
 
 
@@ -327,7 +350,7 @@ Difficulty: Basic
 
 Prompt:
 
-- Write a function called removeEnds that accepts a single string argument, 
+- Write a function called removeEnds that accepts a single string argument,
 then returns the a string with the first and last characters removed.
 - If the length of the string argument is less than 3, return an empty string.
 
@@ -338,9 +361,9 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
-function removeEnds(str) {
-  return str.length < 3 ? '' : str.substring(1, str.length - 1);
-}
+// function removeEnds(str) {
+//   return str.length < 3 ? '' : str.substring(1, str.length - 1);
+// }
 
 
 
@@ -351,9 +374,9 @@ Difficulty: Basic
 
 Prompt:
 
-- Write a function named charCount that accepts a single string argument and returns an 
+- Write a function named charCount that accepts a single string argument and returns an
 object that represents the count of each character in the string.
-- The returned object should have keys that represent the character with its 
+- The returned object should have keys that represent the character with its
 value set to the how many times the character appears in the string argument.
 - Upper and lower case characters should be counted separately.
 - Space characters should be counted too.
@@ -365,16 +388,16 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
-function charCount(str) {
-  let obj = {};
-  let arry = str.split('');
+// function charCount(str) {
+//   let obj = {};
+//   let arry = str.split('');
 
-  arry.forEach(character => {
-    obj[character] ? obj[character]++ : obj[character] = 1
-  })
+//   arry.forEach(character => {
+//     obj[character] ? obj[character]++ : obj[character] = 1
+//   })
 
-  return obj;
-}
+//   return obj;
+// }
 
 
 /*-----------------------------------------------------------------
@@ -386,14 +409,14 @@ Prompt:
 
 - Write a function called formatWithPadding that accepts three arguments:
   - A numeric argument (an integer) representing the number to format.
-  - A string argument (a single character) representing the character 
+  - A string argument (a single character) representing the character
   used to "pad" the returned string to a minimum length.
-  - Another numeric argument (an integer) representing the length to 
+  - Another numeric argument (an integer) representing the length to
   "pad" the returned string to.
-- The function should return the integer as a string, "left padded" 
+- The function should return the integer as a string, "left padded"
 to the length of the 3rd arg using the character provided in the 2nd arg.
-- If the length of the integer converted to a string is equal or 
-greater than the 3rd argument, no padding is needed - just return the 
+- If the length of the integer converted to a string is equal or
+greater than the 3rd argument, no padding is needed - just return the
 integer as a string.
 
 Examples:
@@ -404,14 +427,14 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
-function formatWithPadding(int, pad, amt) {
-  let str2 = int.toString()
-  if (str2.length >= amt) {
-    return str2;
-  }
-  let leftPadding = pad.repeat(amt - str2.length);
-  return `${leftPadding}${str2}`
-}
+// function formatWithPadding(int, pad, amt) {
+//   let str2 = int.toString()
+//   if (str2.length >= amt) {
+//     return str2;
+//   }
+//   let leftPadding = pad.repeat(amt - str2.length);
+//   return `${leftPadding}${str2}`
+// }
 
 // let str2 = int.toString();
 // while(str2.length < amt) {
