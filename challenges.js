@@ -56,27 +56,22 @@ addTwoNumbers(0, 0) //=> 0
 addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
-const addTwoNumbers = function (num1, num2) {
-
-}
-
-
-
-
-
-// function addTwoNumbers(num1, num2) {
-//   if (Number.isInteger(num1 + num2)) {
-//     return num1 + num2;
+// const addTwoNumbers = function (num1, num2) {
+//   if (isNaN(num1) || isNaN(num2)) {
+//     return NaN
+//   } else {
+//     return num1 + num2
 //   }
-// return NaN
+
 // }
 
-// if (isNaN(num1) || isNaN(num2)) {
-//   return NaN;
-// }
-// else {
-//   return num1 + num2;
-// }
+const addTwoNumbers = function (num1, num2) {
+  if (Number.isInteger(num1) && Number.isInteger(num2)) {
+    return num1 + num2
+  } else {
+    return NaN
+  }
+}
 
 
 
