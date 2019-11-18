@@ -96,49 +96,21 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-// function sumNumbers(array){
-//   if(array.length === 0){
-//     return 0
-//   }
-//   return array.reduce((acc, sum) => acc + sum)
-// }
 
 
-// sumNumbers.reduce((total, sumNumbers) => total += sumNumbers); dont work
+function sumNumbers(arr) {
+  var sum = 0
+  if (arr.length === 0) {
+    return 0
+  } else {
+    arr.forEach(function (num) {
+      sum += num
+    })
+    return sum
+  }
+}
 
 
-// function sumNumbers(total){
-//   let sum = 0;
-//   if(total.length > 0) {  
-//     for(let i = 0; i< total, length; i++){
-//     total += total[i];
-//   }
-//   } else {
-//     return 0
-//   }
-//   return sum
-// }
-
-
-
-// function sumNumbers(total){
-//   let sum = 0;
-//   for(let i = 0; i< total, length; i++){
-//     total += total[i];
-//   }
-//   return sum 
-// }
-
-
-
-
-function sumNumbers(nums) {
-  var sum = 0;
-  nums.forEach(function (num) {
-    sum += num;
-  });
-  return sum;
-};
 
 
 
