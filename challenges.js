@@ -202,6 +202,44 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
+
+function computeRemainder(one, two) {
+  if (two === 0) {
+    return Infinity
+  } else {
+    return one % two
+  }
+}
+
+// function computeRemainder(dend, sor) {
+//   var quot
+//   if (sor === 0) {
+//     return Infinity
+//   } else {
+//     quot = (dend / sor)
+//     return sor * (quot - sor)
+//   }
+// }
+
+
+// function computeRemainder(one, two) {
+//   var ansOne = null
+//   if (one === 0) {
+//     return Infinity
+//   } else {
+//     ansOne = (one / two)
+//     return two * (ansOne - two)
+//   }
+
+
+
+
+
+
+
+
+
+
 // function computeRemainder(x, y) {
 //   if (y === 0) {
 //     return Infinity
