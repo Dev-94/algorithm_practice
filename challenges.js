@@ -34,14 +34,16 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
-function addOne(x) {
-  return ++x
+function addOne(num) {
+  return num += 1
 }
+
+
 
 /*-----------------------------------------------------------------
 Challenge: 02-addTwoNumbers
 
-Difficulty: Basic  
+Difficulty: Basic
 
 Prompt:
 
@@ -57,28 +59,42 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-// function addTwoNumbers(num1, num2) {
-//   if (Number.isInteger(num1 + num2)) {
-//     return num1 + num2;
-//   }
-// return NaN
-// }
-
-const addTwoNumbers = function(num1, num2) {
-  if(isNaN(num1) || isNaN(num2)){
-    return NaN;
-  }
-  else {
-    return num1 + num2;
+function addTwoNumbers(num1, num2) {
+  if (isNaN(num1) || isNaN(num2)) {
+    return NaN
+  } else {
+    return num1 += num2
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+// const addTwoNumbers = function (num1, num2) {
+//   if (isNaN(num1) || isNaN(num2)) {
+//     return NaN
+//   } else {
+//     return num1 + num2
+//   }
+
+// }
+
+
+
 
 
 
 /*-----------------------------------------------------------------
 Challenge: 03-sumNumbers
 
-Difficulty: Basic  
+Difficulty: Basic
 
 Prompt:
 
@@ -94,49 +110,18 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
-// function sumNumbers(array){
-//   if(array.length === 0){
-//     return 0
-//   }
-//   return array.reduce((acc, sum) => acc + sum)
-// }
+function sumNumbers(arr) {
+  if (arr.length === 0) {
+    return 0
+  } else {
+    return arr.reduce((a, b) => a += b, 0)
 
-
-// sumNumbers.reduce((total, sumNumbers) => total += sumNumbers); dont work
-
-
-// function sumNumbers(total){
-//   let sum = 0;
-//   if(total.length > 0) {  
-//     for(let i = 0; i< total, length; i++){
-//     total += total[i];
-//   }
-//   } else {
-//     return 0
-//   }
-//   return sum
-// }
-
-
-
-// function sumNumbers(total){
-//   let sum = 0;
-//   for(let i = 0; i< total, length; i++){
-//     total += total[i];
-//   }
-//   return sum 
-// }
+  }
+}
 
 
 
 
-function sumNumbers(nums) {
-  var sum = 0;
-  nums.forEach(function(num) {
-   sum+=num; 
-  });
-   return sum;
-};
 
 
 
@@ -160,20 +145,40 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
-function addList(...args){
-  var sum = 0;
-  for(var i = 0; i < arguments.length; i++){
-    sum += arguments[i];
+
+function addList(...args) {
+  let sum = 0
+  if (args.length === 0) {
+    return 0
+  } else {
+    args.forEach(function (x) {
+      sum += x
+    }
+    )
+    return sum
+
   }
-  return sum;
 }
 
-function addList(...args){
-  if(args.length === 0){
-    return 0
-  }
-  return args.reduce((acc,sum) => acc + sum)
-}
+
+
+
+
+
+// function addList(...args) {
+//   var sum = 0;
+//   for (var i = 0; i < arguments.length; i++) {
+//     sum += arguments[i];
+//   }
+//   return sum;
+// }
+
+// function addList(...args) {
+//   if (args.length === 0) {
+//     return 0
+//   }
+//   return args.reduce((acc, sum) => acc + sum)
+// }
 
 // function addList(arr) {          INCORRECT
 //   var sum = 0;
@@ -205,13 +210,52 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 
-function computeRemainder(x,y){ 
-  if (y === 0) {
-  return Infinity }
-  else {
-   return x % y ;
-  }
+function computeRemainder(num1, num2) {
+  return num2 === 0 ? Infinity : num1 % num2
 }
+
+
+
+
+
+
+// function computeRemainder(dend, sor) {
+//   var quot
+//   if (sor === 0) {
+//     return Infinity
+//   } else {
+//     quot = (dend / sor)
+//     return sor * (quot - sor)
+//   }
+// }
+
+
+// function computeRemainder(one, two) {
+//   var ansOne = null
+//   if (one === 0) {
+//     return Infinity
+//   } else {
+//     ansOne = (one / two)
+//     return two * (ansOne - two)
+//   }
+
+
+
+
+
+
+
+
+
+
+// function computeRemainder(x, y) {
+//   if (y === 0) {
+//     return Infinity
+//   }
+//   else {
+//     return x % y;
+//   }
+// }
 
 // function computeRemainder(x,y){ 
 //   if (y > 0) {
@@ -269,6 +313,18 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 
+
+
+
+
+
+
+
+
+
+
+
+
 // function range(x, y) {
 //  let array = []; 
 // //  iterate thru all numbres between x and y and stop one less than y
@@ -284,19 +340,19 @@ range(5,2) //=> "First argument must be less than second"
 // }
 
 
-function range(num1, num2){
-  let arry = [];
-  if (num1 > num2){
-    return 'First argument must be less than second';
-  }
-  // while(num1 <= num2){
-  //   num1 -= num2
-  // }
-  for(let i = num1; i < num2; i++) {
-    arry.push(i);
-  }
-  return arry;
-}
+// function range(num1, num2) {
+//   let arry = [];
+//   if (num1 > num2) {
+//     return 'First argument must be less than second';
+//   }
+//   // while(num1 <= num2){
+//   //   num1 -= num2
+//   // }
+//   for (let i = num1; i < num2; i++) {
+//     arry.push(i);
+//   }
+//   return arry;
+// }
 
 // while(num1 < num2) {     while loop that works
 //   arry.push num1
@@ -316,32 +372,48 @@ Prompt:
 
 Examples:
 
-reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES" 
+reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
 
-function reverseUpcaseString(str){
-  //.split(), arr, reverse(), join(), uppercase()
-    //   let arr = str.split(" ");
-  // let arr = []; does not work
-  // arr.split(str); does not work
-       // arr.reverse();
-      // arr.join('');
-      // arr.toUpperCase();  
-       // return arr;
-
-
-  return str.split(' ').reverse().join('').toUpperCase(); //does not work
 
 
 
 
-  // "SEI rocks"
 
- 
 
-}
+
+
+
+
+
+
+
+
+
+
+// function reverseUpcaseString(str) {
+//   //.split(), arr, reverse(), join(), uppercase()
+//   //   let arr = str.split(" ");
+//   // let arr = []; does not work
+//   // arr.split(str); does not work
+//   // arr.reverse();
+//   // arr.join('');
+//   // arr.toUpperCase();  
+//   // return arr;
+
+
+//   return str.split(' ').reverse().join('').toUpperCase(); //does not work
+
+
+
+
+//   // "SEI rocks"
+
+
+
+// }
 
 
 
@@ -352,7 +424,7 @@ Difficulty: Basic
 
 Prompt:
 
-- Write a function called removeEnds that accepts a single string argument, 
+- Write a function called removeEnds that accepts a single string argument,
 then returns the a string with the first and last characters removed.
 - If the length of the string argument is less than 3, return an empty string.
 
@@ -363,9 +435,35 @@ removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
 
+
+
 function removeEnds(str) {
-  return str.length < 3 ? '' : str.substring(1, str.length -1);
+  if (str.length < 3) return ""
+  let result = ''
+  for (let i = 1; i < str.length - 1; i++) {
+    result += str.charAt(i)
+  }
+  return result
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function removeEnds(str) {
+//   return str.length < 3 ? '' : str.substring(1, str.length - 1);
+// }
 
 
 
@@ -376,9 +474,9 @@ Difficulty: Basic
 
 Prompt:
 
-- Write a function named charCount that accepts a single string argument and returns an 
+- Write a function named charCount that accepts a single string argument and returns an
 object that represents the count of each character in the string.
-- The returned object should have keys that represent the character with its 
+- The returned object should have keys that represent the character with its
 value set to the how many times the character appears in the string argument.
 - Upper and lower case characters should be counted separately.
 - Space characters should be counted too.
@@ -390,16 +488,28 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
-function charCount(str) {
-    let obj = {};
-    let arry = str.split('');
 
-    arry.forEach(character => {
-      obj[character] ? obj[character] ++ : obj[character] = 1
-    })
 
-    return obj;
-}
+
+
+
+
+
+
+
+
+
+
+// function charCount(str) {
+//   let obj = {};
+//   let arry = str.split('');
+
+//   arry.forEach(character => {
+//     obj[character] ? obj[character]++ : obj[character] = 1
+//   })
+
+//   return obj;
+// }
 
 
 /*-----------------------------------------------------------------
@@ -411,14 +521,14 @@ Prompt:
 
 - Write a function called formatWithPadding that accepts three arguments:
   - A numeric argument (an integer) representing the number to format.
-  - A string argument (a single character) representing the character 
+  - A string argument (a single character) representing the character
   used to "pad" the returned string to a minimum length.
-  - Another numeric argument (an integer) representing the length to 
+  - Another numeric argument (an integer) representing the length to
   "pad" the returned string to.
-- The function should return the integer as a string, "left padded" 
+- The function should return the integer as a string, "left padded"
 to the length of the 3rd arg using the character provided in the 2nd arg.
-- If the length of the integer converted to a string is equal or 
-greater than the 3rd argument, no padding is needed - just return the 
+- If the length of the integer converted to a string is equal or
+greater than the 3rd argument, no padding is needed - just return the
 integer as a string.
 
 Examples:
@@ -429,14 +539,20 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
-function formatWithPadding(int, pad, amt) {
-  let str2 = int.toString()
-  if(str2.length >= amt){
-    return str2;
-  }
-  let leftPadding = pad.repeat(amt - str2.length);
-  return `${leftPadding}${str2}`
-}
+
+
+
+
+
+
+// function formatWithPadding(int, pad, amt) {
+//   let str2 = int.toString()
+//   if (str2.length >= amt) {
+//     return str2;
+//   }
+//   let leftPadding = pad.repeat(amt - str2.length);
+//   return `${leftPadding}${str2}`
+// }
 
 // let str2 = int.toString();
 // while(str2.length < amt) {
@@ -568,7 +684,7 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 /*-----------------------------------------------------------------
 Challenge: 16-findHighestPriced
 
-Difficulty:  Intermediate  
+Difficulty:  Intermediate
 
 Prompt:
 
@@ -586,7 +702,7 @@ findHighestPriced([
   { sku: 'c3', price: 50 },
   { sku: 'd4', price: 10 }
 ]);
-//=> { sku: 'c3', price: 50 } 
+//=> { sku: 'c3', price: 50 }
 
 findHighestPriced([
   { sku: 'a1', price: 25 },
@@ -691,7 +807,7 @@ Hint:
 Examples:
 
 flatten( [1, [2, 3]] );
-//=> [1, 2, 3]  (a new array) 
+//=> [1, 2, 3]  (a new array)
 
 flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
@@ -715,7 +831,7 @@ Prompt:
 Examples:
 
 isPrime(2) //=> true
-isPrime(3) //=> true 
+isPrime(3) //=> true
 isPrime(4) //=> false
 isPrime(29) //=> true
 isPrime(200) //=> false
